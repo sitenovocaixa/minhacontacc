@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.loading-page {
+  background: #fff;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #1664AC;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 100px;
+  height: auto;
+}
+
+.loading-content {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: calc(100vh - 80px); /* Altura da viewport menos a altura do header */
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  animation: spin 1s infinite linear;
+  margin-bottom: 20px;
+}
+
+.spinner-circle {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 80px;
+  stroke-dashoffset: 0;
+  animation: spinner-dash 1.5s ease-in-out infinite;
+}
+
+.loading-text {
+  color: #000;
+  font-size: 24px;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-dash {
+  0% {
+    stroke-dashoffset: 80px;
+  }
+}
+
+.loading-page {
+  background-color: #EEEEEE;
+  /* ...outros estilos... */
+}
+
+body {
+  overflow: hidden;
+}
+
+
+
